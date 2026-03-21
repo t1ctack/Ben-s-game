@@ -1,9 +1,9 @@
 var spawner = instance_find(obj_spawner, 0);
 
 if (spawner != noone) {
-    vida_max = 50 + (spawner.onda * 10);
+    vida_max = 20 + (spawner.onda * 10);
 } else {
-    vida_max = 50;
+    vida_max = 20;
 }
 
 vida = vida_max;

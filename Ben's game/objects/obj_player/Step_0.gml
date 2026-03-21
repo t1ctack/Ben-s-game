@@ -1,4 +1,21 @@
-if (morto) exit;
+if (morto) {
+
+    // clique para reiniciar
+    if (mouse_check_button_pressed(mb_left)) {
+
+        var mx = device_mouse_x_to_gui(0);
+        var my = device_mouse_y_to_gui(0);
+
+        var gui_w = display_get_gui_width();
+        var gui_h = display_get_gui_height();
+
+        if (point_in_rectangle(mx, my, gui_w/2 - 100, gui_h/2 + 20, gui_w/2 + 100, gui_h/2 + 60)) {
+            room_restart();
+        }
+    }
+
+    exit;
+}
 
 var velocidade = 4 + velocidade_bonus;
 
