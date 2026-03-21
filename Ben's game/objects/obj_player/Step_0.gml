@@ -56,6 +56,40 @@ var velocidade = 4 + velocidade_bonus;
 var h = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 var v = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
+// atualizo a direção baseado no movimento
+if (h > 0) {
+    direcao = "right";
+}
+if (h < 0) {
+    direcao = "left";
+}
+if (v > 0) {
+    direcao = "down";
+}
+if (v < 0) {
+    direcao = "up";
+}
+
+// troco o sprite baseado na direção
+switch (direcao) {
+
+    case "down":
+        sprite_index = spr_player;
+        break;
+
+    case "up":
+        sprite_index = spr_player_costa;
+        break;
+
+    case "right":
+        sprite_index = spr_player_direita;
+        break;
+
+    case "left":
+        sprite_index = spr_player_esquerda;
+        break;
+}
+
 // movo o player
 x += h * velocidade;
 y += v * velocidade;

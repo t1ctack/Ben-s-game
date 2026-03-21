@@ -9,3 +9,5 @@ efeito_dano = 0;
 morto = false;
 pausado = false;
 fullscreen = false;
+// guardando a direção 
+direcao = "down";

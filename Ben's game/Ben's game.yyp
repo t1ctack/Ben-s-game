@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"Objetos","folderPath":"folders/Objetos.yy","name":"Objetos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sprint","folderPath":"folders/sprint.yy","name":"sprint","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"sprites_players","folderPath":"folders/sprint/sprites_players.yy","name":"sprites_players","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
@@ -44,6 +45,9 @@
     {"id":{"name":"spr_floor","path":"sprites/spr_floor/spr_floor.yy",},},
     {"id":{"name":"spr_heart","path":"sprites/spr_heart/spr_heart.yy",},},
     {"id":{"name":"spr_hit","path":"sprites/spr_hit/spr_hit.yy",},},
+    {"id":{"name":"spr_player_costa","path":"sprites/spr_player_costa/spr_player_costa.yy",},},
+    {"id":{"name":"spr_player_direita","path":"sprites/spr_player_direita/spr_player_direita.yy",},},
+    {"id":{"name":"spr_player_esquerda","path":"sprites/spr_player_esquerda/spr_player_esquerda.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
   ],
   "resourceType":"GMProject",
