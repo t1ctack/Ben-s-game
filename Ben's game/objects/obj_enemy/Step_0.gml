@@ -1,3 +1,5 @@
+if (global.pausado) exit;
+
 //Isso fara o inimigo ir até o player
 var player = instance_nearest(x, y, obj_player);
 

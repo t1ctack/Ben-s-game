@@ -1,3 +1,5 @@
+if (global.pausado) exit;
+
 var player = instance_nearest(x, y, obj_player);
 
 if (instance_exists(player)) {

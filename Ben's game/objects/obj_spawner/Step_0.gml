@@ -1,3 +1,5 @@
+if (global.pausado) exit;
+
 if (!spawnando && inimigos_vivos <= 0) {
 
     onda += 1;

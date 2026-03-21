@@ -7,3 +7,5 @@ auto_tiro = false;
 tempo_auto_tiro = 0;
 efeito_dano = 0;
 morto = false;
+pausado = false;
+fullscreen = false;

@@ -57,3 +57,5 @@ if (morto) {
     draw_set_color(c_white);
     draw_text(gui_w / 2, gui_h / 2 + 40, "REINICIAR");
 }
+
+

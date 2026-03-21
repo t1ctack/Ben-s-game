@@ -8,3 +8,5 @@ speed = 10;
 image_angle = direction;
 
 dono = "player";
+
+velocidade_original = speed;
