@@ -24,7 +24,7 @@
     {"$GMFolder":"","%Name":"outhers","folderPath":"folders/sprint/outhers.yy","name":"outhers","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sprint_enemys","folderPath":"folders/sprint/sprint_enemys.yy","name":"sprint_enemys","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sprites_players","folderPath":"folders/sprint/sprites_players.yy","name":"sprites_players","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"andando_s","folderPath":"folders/sprint/sprites_players/andando_s.yy","name":"andando_s","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"andando","folderPath":"folders/sprint/sprites_players/andando.yy","name":"andando","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"parado","folderPath":"folders/sprint/sprites_players/parado.yy","name":"parado","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],

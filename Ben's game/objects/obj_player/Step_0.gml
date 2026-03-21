@@ -56,38 +56,68 @@ var velocidade = 4 + velocidade_bonus;
 var h = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 var v = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
-// atualizo a direção baseado no movimento
+// ==========================
+// DIREÇÃO E ANIMAÇÃO
+// ==========================
+
+var movendo = (h != 0 || v != 0);
+
 if (h > 0) {
     direcao = "right";
 }
 if (h < 0) {
-    direcao = "left";
+    //direcao = "left";
 }
 if (v > 0) {
     direcao = "down";
 }
 if (v < 0) {
-    direcao = "up";
+    //direcao = "up";
 }
 
-// troco o sprite baseado na direção
-switch (direcao) {
 
-    case "down":
-        sprite_index = spr_player;
-        break;
+// ==========================
+// 🖼️ TROCA DE SPRITE
+// ==========================
 
-    case "up":
-        sprite_index = spr_player_costa;
-        break;
+if (movendo) {
 
-    case "right":
-        sprite_index = spr_player_direita;
-        break;
+    switch (direcao) {
 
-    case "left":
-        sprite_index = spr_player_esquerda;
-        break;
+        case "down":
+            sprite_index = spr_player_andando_s;
+            break;
+
+        case "right":
+            sprite_index = spr_player_andando_d;
+            break;
+    }
+
+    image_speed = 0.7;
+
+} else {
+
+    switch (direcao) {
+
+        case "down":
+            sprite_index = spr_player;
+            break;
+
+        case "up":
+            sprite_index = spr_player_costa;
+            break;
+
+        case "right":
+            sprite_index = spr_player_direita;
+            break;
+
+        case "left":
+            sprite_index = spr_player_esquerda;
+            break;
+    }
+
+    image_speed = 0;
+    image_index = 0;
 }
 
 // movo o player
