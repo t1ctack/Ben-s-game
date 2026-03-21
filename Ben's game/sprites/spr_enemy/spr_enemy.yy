@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"sprint",
-    "path":"folders/sprint.yy",
+    "name":"sprint_enemys",
+    "path":"folders/sprint/sprint_enemys.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

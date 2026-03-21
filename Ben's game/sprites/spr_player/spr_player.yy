@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"sprites_players",
-    "path":"folders/sprint/sprites_players.yy",
+    "name":"parado",
+    "path":"folders/sprint/sprites_players/parado.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

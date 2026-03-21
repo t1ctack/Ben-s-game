@@ -8,8 +8,8 @@
   "name":"obj_drop",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"drops",
+    "path":"folders/Objetos/drops.yy",
   },
   "parentObjectId":null,
   "persistent":false,

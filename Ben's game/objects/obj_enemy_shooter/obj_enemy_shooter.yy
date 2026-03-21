@@ -9,8 +9,8 @@
   "name":"obj_enemy_shooter",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"enemys",
+    "path":"folders/Objetos/enemys.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -9,8 +9,8 @@
   "name":"obj_bullet_enemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"bullets",
+    "path":"folders/Objetos/bullets.yy",
   },
   "parentObjectId":null,
   "persistent":false,

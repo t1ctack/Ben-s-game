@@ -9,8 +9,8 @@
   "name":"obj_hit",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"effects",
+    "path":"folders/Objetos/effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
