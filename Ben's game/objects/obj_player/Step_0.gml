@@ -33,107 +33,36 @@ if (global.pausado) {
     exit;
 }
 
+
 // ==========================
 // FULLSCREEN (F11)
 // ==========================
 
 // alterno fullscreen com F11
 if (keyboard_check_pressed(vk_f11)) {
-
     fullscreen = !fullscreen;
     window_set_fullscreen(fullscreen);
 }
 
 
 // ==========================
-// MOVIMENTO DO PLAYER
+// INPUT E MOVIMENTO
 // ==========================
 
-// calculo velocidade com bonus
+// defino velocidade com bonus
 var velocidade = 4 + velocidade_bonus;
 
 // pego input do teclado
 var h = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 var v = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
-// ==========================
-// DIREÇÃO E ANIMAÇÃO
-// ==========================
-
 // verifico se estou me movendo
 var movendo = (h != 0 || v != 0);
 
-// atualizo direção baseado no movimento
-if (h > 0) {
-    direcao = "right";
-}
-if (h < 0) {
-    direcao = "left";
-}
-if (v > 0) {
-    direcao = "down";
-}
-if (v < 0) {
-    direcao = "up";
-}
-
-
-// ==========================
-// 🖼️ TROCA DE SPRITE
-// ==========================
-
-if (movendo) {
-
-    // ===== ANDANDO =====
-    switch (direcao) {
-
-        case "down":
-            sprite_index = spr_player_andando_s;
-            break;
-
-        case "up":
-            sprite_index = spr_player_andando_w;
-            break;
-
-        case "right":
-            sprite_index = spr_player_andando_d;
-            break;
-
-        case "left":
-            sprite_index = spr_player_andando_a;
-            break;
-    }
-
-    image_speed = 0.2; // velocidade da animação
-
-} else {
-
-    // ===== PARADO =====
-    switch (direcao) {
-
-        case "down":
-            sprite_index = spr_player;
-            break;
-
-        case "up":
-            sprite_index = spr_player_costa;
-            break;
-
-        case "right":
-            sprite_index = spr_player_direita;
-            break;
-
-        case "left":
-            sprite_index = spr_player_esquerda;
-            break;
-    }
-
-    image_speed = 0; // parado
-    image_index = 0; // trava no primeiro frame
-}
 // movo o player
 x += h * velocidade;
 y += v * velocidade;
+
 
 // ==========================
 // LIMITAR PLAYER (COM SPRITE)
@@ -162,6 +91,99 @@ if (y > room_height - metade_altura) {
     y = room_height - metade_altura;
 }
 
+
+// ==========================
+// DIREÇÃO
+// ==========================
+
+// atualizo direção baseado no movimento
+if (h > 0) direcao = "right";
+if (h < 0) direcao = "left";
+if (v > 0) direcao = "down";
+if (v < 0) direcao = "up";
+
+
+// ==========================
+// ANIMAÇÃO E SPRITES
+// ==========================
+
+if (movendo) {
+
+    // andando
+    switch (direcao) {
+
+        case "down":
+            sprite_index = spr_player_andando_s;
+            break;
+
+        case "up":
+            sprite_index = spr_player_andando_w;
+            break;
+
+        case "right":
+            sprite_index = spr_player_andando_d;
+            break;
+
+        case "left":
+            sprite_index = spr_player_andando_a;
+            break;
+    }
+
+    image_speed = 0.2;
+
+} else {
+
+    // parado
+    if (mouse_check_button(mb_left)) {
+
+        // atirando parado
+        switch (direcao) {
+
+            case "down":
+                sprite_index = spr_player_atpd_s;
+                break;
+
+            case "up":
+                sprite_index = spr_player_atpd_w;
+                break;
+
+            case "right":
+                sprite_index = spr_player_atpd_d;
+                break;
+
+            case "left":
+                sprite_index = spr_player_atpd_a;
+                break;
+        }
+
+    } else {
+
+        // parado normal
+        switch (direcao) {
+
+            case "down":
+                sprite_index = spr_player;
+                break;
+
+            case "up":
+                sprite_index = spr_player_costa;
+                break;
+
+            case "right":
+                sprite_index = spr_player_direita;
+                break;
+
+            case "left":
+                sprite_index = spr_player_esquerda;
+                break;
+        }
+    }
+
+    image_speed = 0;
+    image_index = 0;
+}
+
+
 // ==========================
 // TIRO NORMAL
 // ==========================
@@ -176,7 +198,6 @@ if (mouse_check_button_pressed(mb_left)) {
 // INVENCIBILIDADE
 // ==========================
 
-// conto o tempo de invencibilidade
 if (invencivel) {
 
     tempo_invencivel--;
@@ -186,7 +207,7 @@ if (invencivel) {
     }
 }
 
-// deixo o player transparente quando invencível
+// mudo opacidade quando invencível
 if (invencivel) {
     image_alpha = 0.5;
 } else {
@@ -198,7 +219,6 @@ if (invencivel) {
 // BONUS DE VELOCIDADE
 // ==========================
 
-// conto tempo do bonus
 if (tempo_velocidade > 0) {
     tempo_velocidade--;
 } else {
@@ -218,7 +238,6 @@ if (auto_tiro) {
         auto_tiro = false;
     }
 
-    // dispara em todas as direções
     if (current_time mod 200 < 16) {
 
         for (var i = 0; i < 360; i += 45) {
@@ -231,10 +250,9 @@ if (auto_tiro) {
 
 
 // ==========================
-// FEITO DE DANO
+// EFEITO DE DANO
 // ==========================
 
-// diminuo o efeito visual
 if (efeito_dano > 0) {
     efeito_dano--;
 }
