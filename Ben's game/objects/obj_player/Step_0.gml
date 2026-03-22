@@ -60,19 +60,21 @@ var v = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 // DIREÇÃO E ANIMAÇÃO
 // ==========================
 
+// verifico se estou me movendo
 var movendo = (h != 0 || v != 0);
 
+// atualizo direção baseado no movimento
 if (h > 0) {
     direcao = "right";
 }
 if (h < 0) {
-    //direcao = "left";
+    direcao = "left";
 }
 if (v > 0) {
     direcao = "down";
 }
 if (v < 0) {
-    //direcao = "up";
+    direcao = "up";
 }
 
 
@@ -82,21 +84,31 @@ if (v < 0) {
 
 if (movendo) {
 
+    // ===== ANDANDO =====
     switch (direcao) {
 
         case "down":
             sprite_index = spr_player_andando_s;
             break;
 
+        case "up":
+            sprite_index = spr_player_andando_w;
+            break;
+
         case "right":
             sprite_index = spr_player_andando_d;
             break;
+
+        case "left":
+            sprite_index = spr_player_andando_a;
+            break;
     }
 
-    image_speed = 0.7;
+    image_speed = 0.2; // velocidade da animação
 
 } else {
 
+    // ===== PARADO =====
     switch (direcao) {
 
         case "down":
@@ -116,10 +128,9 @@ if (movendo) {
             break;
     }
 
-    image_speed = 0;
-    image_index = 0;
+    image_speed = 0; // parado
+    image_index = 0; // trava no primeiro frame
 }
-
 // movo o player
 x += h * velocidade;
 y += v * velocidade;
