@@ -1,0 +1,130 @@
+PROMPT:
+
+Quero criar um jogo 2D simples em pixel art usando GameMaker, e preciso que você me ajude passo a passo, como um guia de desenvolvimento completo.
+
+🎮 Conceito do Jogo
+
+O jogo será um shooter top-down (visão de cima, estilo Pokémon), baseado em ondas de inimigos.
+
+A história inicial (pode ser melhorada depois):
+O protagonista é um ciborgue criado pelo governo para ser uma arma. Eles confiaram tanto nele que o deixaram livre por um tempo, sem controle. Esse tempo foi suficiente para ele se rebelar, destruir o local onde estava e invadir a base principal, enfrentando soldados em ondas.
+
+🧍 Personagem Principal
+
+Homem, 19 anos
+
+Negro, cabelo cacheado
+
+Uma mão ciborgue que dispara laser
+
+Roupa: regata roxa, calça jeans, chinelo slide roxo com meias
+
+🪖 Inimigos (Guardas)
+
+Visual padrão: boné e farda verde
+
+Tipos:
+
+Corpo a corpo: atacam com cacetete
+
+Longo alcance: usam rifles e atiram na direção do jogador
+
+⚙️ Mecânicas do Jogo
+
+Estilo: pixel art, visão top-down
+
+Movimento: teclado (WASD)
+
+Ataque: mouse (botão esquerdo)
+
+Sistema de vida:
+
+3 corações
+
+Cada hit = -1 coração
+
+Sistema de inimigos:
+
+Surgem de forma aleatória ao redor do mapa
+
+A cada onda, aumenta a dificuldade e quantidade
+
+Drops aleatórios:
+
+Vida (coração)
+
+Aumento de velocidade
+
+Tiro automático em todas as direções
+
+🖥️ Interface e Fluxo
+
+Tela inicial:
+
+Botões: "Jogar" e "Sair"
+
+Ao iniciar:
+
+Personagem aparece no centro
+
+Inimigos começam a surgir após alguns segundos
+
+Pause (ESC):
+
+Continuar
+
+Reiniciar
+
+Sair
+
+HUD:
+
+Mostrar corações (vida)
+
+Mostrar número da onda
+
+Aviso quando nova onda começar
+
+🧠 Forma de Desenvolvimento (IMPORTANTE)
+
+Quero que você:
+
+Me ensine PASSO A PASSO, sem pular etapas
+
+Me dê um passo por vez, e só avance quando eu pedir
+
+Me ajude desde:
+
+Criação dos sprites (pixel art estilo Pokémon)
+
+Organização do projeto
+
+Mecânicas básicas
+
+Até o código completo funcionando
+
+🛠️ Ferramentas
+
+GameMaker (gratuito)
+
+Recursos gratuitos apenas (sem nada pago)
+
+📌 Regras para você (IA)
+
+Não me dê tudo de uma vez
+
+Sempre termine perguntando se pode ir para o próximo passo
+
+Explique de forma simples e prática
+
+Pode sugerir melhorias no jogo (mecânicas, ideias, etc.)
+
+🎯 Objetivo Final
+
+Criar um jogo simples, mas funcional e bem estruturado, com:
+
+Código organizado
+
+Mecânicas completas
+
+Jogabilidade divertida
