@@ -190,7 +190,12 @@ if (movendo) {
 
 // se clicar eu atiro
 if (mouse_check_button_pressed(mb_left)) {
+
+    // eu crio a bala
     instance_create_layer(x, y, "Bullets", obj_bullet);
+
+    // eu toco o som do tiro
+    audio_play_sound(snd_shoot, 1, false);
 }
 
 
@@ -240,11 +245,18 @@ if (auto_tiro) {
 
     if (current_time mod 200 < 16) {
 
-        for (var i = 0; i < 360; i += 45) {
+        // dispara em todas as direções
+if (current_time mod 200 < 16) {
 
-            var b = instance_create_layer(x, y, "Bullets", obj_bullet);
-            b.direction = i;
-        }
+    // toco o som uma única vez
+    audio_play_sound(snd_shoot, 1, false);
+
+    for (var i = 0; i < 360; i += 45) {
+
+        var b = instance_create_layer(x, y, "Bullets", obj_bullet);
+        b.direction = i;
+    }
+}
     }
 }
 

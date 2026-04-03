@@ -13,4 +13,15 @@ if (global.pausado) {
     draw_set_color(c_white);
 
     draw_text(gui_w / 2, gui_h / 2, "PAUSADO");
+	
+	// botão reiniciar
+    draw_text(gui_w/2, gui_h/2 + 20, "REINICIAR");
+
+    // controles
+    draw_text(gui_w/2, gui_h/2 + 80, "(M) Muta musica");
+    draw_text(gui_w/2, gui_h/2 + 110, "(+) Aumenta volume");
+    draw_text(gui_w/2, gui_h/2 + 140, "(-) Diminui volume");
+
+    // volume atual
+    draw_text(gui_w/2, gui_h/2 + 180, "Volume: " + string(round(volume_musica * 100)) + "%");
 }

@@ -1,3 +1,9 @@
+// se estiver pausado eu não spawno
+if (global.pausado) {
+    alarm[0] = 1; // tenta de novo no próximo frame
+    exit;
+}
+
 if (spawnando) {
 
     if (inimigos_para_spawnar > 0) {
