@@ -10,3 +10,6 @@ volume_musica = 1;
 
 // aplico o volume
 audio_sound_gain(snd_music, volume_musica, 0);
+
+// estado inicial do fullscreen
+fullscreen = false;

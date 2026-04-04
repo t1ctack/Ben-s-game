@@ -1,6 +1,20 @@
+// ==========================
+// FULLSCREEN (FUNCIONA SEMPRE)
+// ==========================
+
+// alterno fullscreen com F11
+if (keyboard_check_pressed(vk_f11)) {
+
+    fullscreen = !fullscreen;
+
+    window_set_fullscreen(fullscreen);
+}
+
+
 if (keyboard_check_pressed(vk_escape)) {
     global.pausado = !global.pausado;
 }
+
 
 // ==========================
 // CONTROLE DE VOLUME
