@@ -37,6 +37,19 @@ if (keyboard_check_pressed(vk_escape)) {
 }
 
 // ==========================
+// REINICIAR COM R
+// ==========================
+
+if (keyboard_check_pressed(ord("R"))) {
+
+    // só funciona durante o jogo (não no menu)
+    if (!global.no_menu) {
+        global.pausado = false;
+        room_restart();
+    }
+}
+
+// ==========================
 // CONTROLE DE VOLUME 
 // ==========================
 

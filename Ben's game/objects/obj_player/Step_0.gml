@@ -1,11 +1,10 @@
 // ==========================
-// SISTEMA DE MORTE
+// SISTEMA DE MORTE (PRIORIDADE MÁXIMA)
 // ==========================
 
-// se eu morri, eu paro tudo e só deixo reiniciar
 if (morto) {
 
-    // detecto clique do mouse
+    // clique para reiniciar ou sair
     if (mouse_check_button_pressed(mb_left)) {
 
         var mx = device_mouse_x_to_gui(0);
@@ -14,13 +13,21 @@ if (morto) {
         var gui_w = display_get_gui_width();
         var gui_h = display_get_gui_height();
 
-        // se clicar no botão reiniciar
+        // REINICIAR
         if (point_in_rectangle(mx, my, gui_w/2 - 100, gui_h/2 + 20, gui_w/2 + 100, gui_h/2 + 60)) {
+            global.pausado = false;
             room_restart();
+        }
+
+        // SAIR
+        if (point_in_rectangle(mx, my, gui_w/2 - 100, gui_h/2 + 80, gui_w/2 + 100, gui_h/2 + 120)) {
+            global.no_menu = true;
+            global.pausado = false;
+            room_goto(rm_menu);
         }
     }
 
-    exit; // paro todo o resto do código
+    exit; // PARA TODO O RESTO DO CÓDIGO
 }
 
 
@@ -33,6 +40,52 @@ if (global.pausado) {
     exit;
 }
 
+// ==========================
+// ATIVAR ENERGIA (TECLA E)
+// ==========================
+
+if (keyboard_check_pressed(ord("E"))) {
+
+    if (energia_uso > 0 && !energia_ativa) {
+
+        energia_uso--; // gasto 1 carga
+        energia_ativa = true;
+
+        energia_tiros_restantes = 5; // 5 sequências
+        energia_delay = 0;
+    }
+}
+
+
+// ==========================
+// EXECUTAR TIRO AUTOMÁTICO
+// ==========================
+
+if (energia_ativa) {
+
+    energia_delay--;
+
+    if (energia_delay <= 0) {
+		
+		// toco o som uma vez por sequência
+        audio_play_sound(snd_shoot, 1, false);
+
+        // dispara em todas direções
+        for (var i = 0; i < 360; i += 45) {
+
+            var b = instance_create_layer(x, y, "Bullets", obj_bullet);
+            b.direction = i;
+        }
+
+        energia_tiros_restantes--;
+
+        energia_delay = 10; // tempo entre disparos
+
+        if (energia_tiros_restantes <= 0) {
+            energia_ativa = false;
+        }
+    }
+}
 
 // ==========================
 // FULLSCREEN (F11)
@@ -101,6 +154,25 @@ if (h > 0) direcao = "right";
 if (h < 0) direcao = "left";
 if (v > 0) direcao = "down";
 if (v < 0) direcao = "up";
+
+// ==========================
+// SPRITE DA ENERGIA (PRIORIDADE MÁXIMA)
+// ==========================
+
+if (energia_ativa) {
+
+    sprite_index = spr_player_wasd;
+
+    // velocidade da animação
+    image_speed = 0.5;
+
+    // não executa o resto das sprites
+    exit;
+}
+
+if (!energia_ativa) {
+    image_angle = 0;
+}
 
 
 // ==========================
@@ -228,36 +300,6 @@ if (tempo_velocidade > 0) {
     tempo_velocidade--;
 } else {
     velocidade_bonus = 0;
-}
-
-
-// ==========================
-// TIRO AUTOMÁTICO
-// ==========================
-
-if (auto_tiro) {
-
-    tempo_auto_tiro--;
-
-    if (tempo_auto_tiro <= 0) {
-        auto_tiro = false;
-    }
-
-    if (current_time mod 200 < 16) {
-
-        // dispara em todas as direções
-if (current_time mod 200 < 16) {
-
-    // toco o som uma única vez
-    audio_play_sound(snd_shoot, 1, false);
-
-    for (var i = 0; i < 360; i += 45) {
-
-        var b = instance_create_layer(x, y, "Bullets", obj_bullet);
-        b.direction = i;
-    }
-}
-    }
 }
 
 

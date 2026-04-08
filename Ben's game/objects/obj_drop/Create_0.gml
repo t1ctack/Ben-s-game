@@ -9,3 +9,10 @@ else if (chance < 85) {
 else {
     tipo = 2; // tiro automático (15% - raro)
 }
+
+// tempo de vida (30 segundos)
+tempo_vida = room_speed * 30;
+
+// começa sem piscar
+piscando = false;
+

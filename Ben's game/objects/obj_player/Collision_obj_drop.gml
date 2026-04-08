@@ -11,6 +11,8 @@ switch (other.tipo) {
     break;
 	case 2:
 		auto_tiro = true;
+		// adiciono 4 usos de energia
+		energia_uso += 4;
 		tempo_auto_tiro = 180; // 3 segundos
 	break;
 }

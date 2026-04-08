@@ -11,3 +11,14 @@ pausado = false;
 fullscreen = false;
 // guardando a direção 
 direcao = "down";
+// ==========================
+// SISTEMA DE ENERGIA
+// ==========================
+
+// quantas cargas tenho
+energia_uso = 0;
+
+// controle do tiro automático
+energia_ativa = false;
+energia_tiros_restantes = 0;
+energia_delay = 0;
