@@ -69,12 +69,12 @@ if (morto) {
 if (energia_uso > 0) {
 
     // desenho só 1 sprite
-    draw_sprite(spr_energia, 0, 20, 70);
+    draw_sprite_ext(spr_energia, 0, 20, 120, 2, 2, 0, c_white, 1);
 
     // texto roxo
     draw_set_color(make_color_rgb(150, 0, 255));
 
-    draw_text(60, 70, string(energia_uso) + "x");
+    draw_text(50, 110, string(energia_uso) + "x");
 
     // volta cor normal
     draw_set_color(c_white);
