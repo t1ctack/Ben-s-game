@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"sprint_enemys",
-    "path":"folders/sprint/sprint_enemys.yy",
+    "name":"parado",
+    "path":"folders/sprint/sprint_enemys/enemyBase/parado.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
